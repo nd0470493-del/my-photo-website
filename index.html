@@ -5,10 +5,14 @@
 
     <style>
         body {
-            text-align: center;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             font-family: Arial, sans-serif;
             background: #f2f2f2;
-            padding-top: 30px;
         }
 
         h1 {
@@ -23,9 +27,34 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 25px;
             border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+            /* फोटो को हिलाने की animation */
+            animation: movePhoto 3s ease-in-out infinite;
+        }
+
+        @keyframes movePhoto {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(10px, -10px);
+            }
+
+            50% {
+                transform: translate(0, 10px);
+            }
+
+            75% {
+                transform: translate(-10px, -10px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
         }
     </style>
 </head>
